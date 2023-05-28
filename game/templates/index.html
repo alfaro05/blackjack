@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Blackjack game!{% endblock %}
+
+{% block body_content %}
+<p>Here we have some dummy content. This will be a cool template!</p>
+<div id="root"></div>
+<div class="dummy-img">https://i.blogs.es/702e28/elden-ring-gato/1366_2000.jpeg</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'react/Component.js' %}" type="text/babel"></script>
+{% endblock %}

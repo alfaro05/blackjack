@@ -94,3 +94,6 @@ hr{
     color: var(--light-color);
     text-align: center;
 }
+.footer a{
+    color: var(--strong-color);
+}

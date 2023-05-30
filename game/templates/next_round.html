@@ -5,13 +5,13 @@
 <h3>Opponent's Hand</h3>
 <div class="hand-area">
     {% for i in fph %}
-        <div class="bot-card card hide">{{i}}</div>        
+        <div class="bot-card card hide hidden">{{i}}</div>        
     {% endfor %}
 </div>
 <h3>My Hand</h3>
 <div class="hand-area">
     {% for i in sph %}
-        <div class="player-card card">{{i}}</div>        
+        <div class="player-card card hidden">{{i}}</div>        
     {% endfor %}
 </div>
 {% if game_over %}

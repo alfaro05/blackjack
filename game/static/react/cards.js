@@ -56,5 +56,6 @@ let props_array = cards_array.map(function(element){
 let index = 0;
 props_array.map(function(element){
     ReactDOM.render(<CardComponent num={element.num} symbol={element.symbol}/>,cards_array[index])
+    cards_array[index].classList.toggle("hidden");
     index += 1;
 });

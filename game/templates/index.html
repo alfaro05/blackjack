@@ -3,9 +3,11 @@
 {% block title %}Blackjack game!{% endblock %}
 
 {% block body_content %}
-<p>Here we have some dummy content. This will be a cool template!</p>
-<div id="root"></div>
-<div class="dummy-img">https://i.blogs.es/702e28/elden-ring-gato/1366_2000.jpeg</div>
+<h2>Welcome!</h2>
+<p>This is a simple Blackjack game. It's visuals are pretty basic, but 
+    we expect it will have more features soon!
+</p>
+<a href="{% url 'game' %}" class="button">Let's play!</a>
 {% endblock %}
 
 {% block scripts %}

@@ -17,7 +17,9 @@
 <body>
     <div class="contanier">
         <div class="header">
-            <h1>COOL BLACKJACK</h1>
+            <a href="{% url 'index' %}">
+                <h1>COOL BLACKJACK</h1>
+            </a>
             <img src="{% static 'img/signala.png' %}" alt="Signal logo" height="120px" id="signal">
         </div>
         <div class="body">
@@ -25,6 +27,9 @@
             {% endblock %}
         </div>
         <div class="footer">
+            <hr color="#e6bf33">
+            <p>Developed by Alberto Alfaro using Django and React, 2023.</p>
+            <p>GNU General Public License v3.0.</p>
         </div>
     </div>
     <script type="text/javascript">

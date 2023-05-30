@@ -18,7 +18,7 @@
 <div>
     <p class="first-message hidden">Game Over!</p>
     <p class="second-message hidden">{{message}}</p>
-    <button id="show-button" class="hidden button">Try again</button>
+    <a href="{% url 'game' %}" id="show-button" class="hidden button">Try again</a>
 </div>
 {% else %}
 <form action="next_round" method="post">

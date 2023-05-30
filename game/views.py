@@ -33,7 +33,7 @@ def next_round(request):
     game_over = game_over or another_round
     first_player_hand = this_round_game.players[0].hand
     second_player_hand = this_round_game.players[1].hand
-    message_string = ""
+    message_string = "Someone won"
     print("Is the game over?",game_over)
     if(not(game_over)):
         request.session["game_object"]=this_round_game.session_object()
@@ -45,11 +45,11 @@ def next_round(request):
         if(this_round_game.players[0].still_alive and this_round_game.players[1].still_alive):
             if(this_round_game.players[0].result == this_round_game.players[1].result):
                 message_string = "It's a tie!"
-        else:
-            if(this_round_game.players[0].result > this_round_game.players[1].result):
-                message_string = "Your opponent won!"
             else:
-                message_string = "You won!"
+                if(this_round_game.players[0].result > this_round_game.players[1].result):
+                    message_string = "Your opponent won!"
+                else:
+                    message_string = "You won!"
         if(this_round_game.players[0].still_alive and not(this_round_game.players[1].still_alive)):
             message_string = "Your opponent won!"
         if(this_round_game.players[1].still_alive and not(this_round_game.players[0].still_alive)): 

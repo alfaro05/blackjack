@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body_content %}
+<h1>Let's Begin!</h1>
+<h2>Bot's hand</h2>
+<div class="hand-area">
+    {% for i in fph %}
+        <div class="bot-card card hide">{{i}}</div>        
+    {% endfor %}
+</div>
+<h2>My hand</h2>
+<div class="hand-area">
+    {% for i in sph %}
+        <div class="player-card card">{{i}}</div>        
+    {% endfor %}
+</div>
+<form action="next_round" method="post">
+    {% csrf_token %}
+    <button name="continue" value="True">Take</button>
+    <button name="continue" value="False">Stand</button>
+</form>
+{{deck}}
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'react/cards.js'%}" type="text/babel"></script>
+{% endblock %}

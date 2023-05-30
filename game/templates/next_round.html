@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body_content %}
+<h1>Bot hand</h1>
+<div class="hand-area">
+    {% for i in fph %}
+        <div class="bot-card card hide">{{i}}</div>        
+    {% endfor %}
+</div>
+<h1>My hand</h1>
+<div class="hand-area">
+    {% for i in sph %}
+        <div class="player-card card">{{i}}</div>        
+    {% endfor %}
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'react/cards.js'%}" type="text/babel"></script>
+{% endblock %}

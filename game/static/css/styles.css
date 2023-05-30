@@ -1,0 +1,46 @@
+:root{
+    --bg-color:rgb(27, 27, 27);
+    --strong-color:#812843;
+    --light-color:#e6bf33;   
+}
+body{
+    background-color: var(--bg-color);
+    color: white;
+}
+h1, h2{
+    color: var(--strong-color);
+    text-shadow: 1px 0px 1px white, -1px 0px 1px white,
+        0px 1px 1px white, 0px -1px 1px white;
+}
+.hand-area{
+    display: flex;
+    flex-direction: row;
+}
+.card{
+    width: 70px;
+    height: 120px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 5px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.card p{
+    padding: 0px;
+    margin: 0px;
+    font-size: larger;
+    font-weight: bold;
+}
+.red-card{
+    color: red;
+}
+.black-card{
+    color:black;
+}
+.hide{
+    background-image:url(card_pattern.png);
+}
+.hide p{
+    visibility: hidden;
+}

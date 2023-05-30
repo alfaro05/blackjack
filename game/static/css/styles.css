@@ -6,11 +6,29 @@
 body{
     background-color: var(--bg-color);
     color: white;
+    font-family: 'Merriweather Sans', sans-serif;
 }
-h1, h2{
+h1{
+    font-family: 'Bungee Inline', cursive;
     color: var(--strong-color);
     text-shadow: 1px 0px 1px white, -1px 0px 1px white,
         0px 1px 1px white, 0px -1px 1px white;
+}
+h2, h3{
+    color: var(--light-color);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+}
+.header img{
+    align-self: center;
+    margin-left: auto;
 }
 .hand-area{
     display: flex;
@@ -37,6 +55,18 @@ h1, h2{
 }
 .black-card{
     color:black;
+}
+.button{
+    text-decoration: none;
+    background-color: var(--light-color);
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    padding:5px;
+}
+.button:hover{
+    background-color: var(--strong-color);
+    color: white;
 }
 .hide{
     background-image:url(card_pattern.png);

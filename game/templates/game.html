@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block body_content %}
-<h1>Let's Begin!</h1>
-<h2>Opponent's Hand</h2>
+<h2>Let's Begin!</h2>
+<h3>Opponent's Hand</h3>
 <div class="hand-area">
     {% for i in fph %}
         <div class="bot-card card hide">{{i}}</div>        
     {% endfor %}
 </div>
-<h2>My Hand</h2>
+<h3>My Hand</h3>
 <div class="hand-area">
     {% for i in sph %}
         <div class="player-card card">{{i}}</div>        

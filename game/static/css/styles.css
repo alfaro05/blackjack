@@ -96,4 +96,15 @@ hr{
 }
 .footer a{
     color: var(--strong-color);
+    text-shadow: 1px 0px 1px var(--light-color),
+    -1px 0px 1px var(--light-color),
+    0px 1px 1px var(--light-color),
+    0px -1px 1px var(--light-color),;
+}
+.footer a{
+    color: var(--light-color);
+    text-shadow: 1px 0px 1px var(--strong-color),
+    -1px 0px 1px var(--strong-color),
+    0px 1px 1px var(--strong-color),
+    0px -1px 1px var(--strong-color),;
 }

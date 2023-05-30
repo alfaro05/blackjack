@@ -16,8 +16,8 @@
 </div>
 <form action="next_round" method="post">
     {% csrf_token %}
-    <button name="continue" value="True">Take</button>
-    <button name="continue" value="False">Stand</button>
+    <button name="continue" value="True" class="button">Take</button>
+    <button name="continue" value="False" class="button">Stand</button>
 </form>
 {{deck}}
 {% endblock %}

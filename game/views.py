@@ -29,7 +29,7 @@ def next_round(request):
         this_round_game.player_takes_new_card(0)
     this_round_game.check_round()
     game_over = this_round_game.game_over
-    another_round = continue_flag and bot_takes_card
+    another_round = not(continue_flag and bot_takes_card)
     game_over = game_over or another_round
     first_player_hand = this_round_game.players[0].hand
     second_player_hand = this_round_game.players[1].hand
@@ -53,7 +53,7 @@ def next_round(request):
         if(this_round_game.players[0].still_alive and not(this_round_game.players[1].still_alive)):
             message_string = "Your opponent won!"
         if(this_round_game.players[1].still_alive and not(this_round_game.players[0].still_alive)): 
-            message_string = "Your won!"
+            message_string = "Your won!" #There's an error here, it's excecuted when both players lose.
 
 
     return render(request, "next_round.html",{"game_over":game_over,

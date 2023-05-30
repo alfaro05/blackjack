@@ -16,9 +16,9 @@
 </div>
 {% if game_over %}
 <div>
-    <p class="first-message">Game Over!</p>
-    <p class="second-message">{{message}}</p>
-    <button id="show-button">See cards</button>
+    <p class="first-message hidden">Game Over!</p>
+    <p class="second-message hidden">{{message}}</p>
+    <button id="show-button" class="hidden button">Try again</button>
 </div>
 {% else %}
 <form action="next_round" method="post">
@@ -30,4 +30,5 @@
 {% endblock %}
 {% block scripts %}
 <script src="{% static 'react/cards.js'%}" type="text/babel"></script>
+<script src="{% static 'js/results.js'%}" type="text/babel"></script>
 {% endblock %}

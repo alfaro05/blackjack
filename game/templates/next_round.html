@@ -14,6 +14,17 @@
         <div class="player-card card">{{i}}</div>        
     {% endfor %}
 </div>
+{% if game_over %}
+<div>
+    <p>{{message}}</p>
+</div>
+{% else %}
+<form action="next_round" method="post">
+    {% csrf_token %}
+    <button name="continue" value="True">Take</button>
+    <button name="continue" value="False">Stand</button>
+</form>
+{% endif %}
 {% endblock %}
 {% block scripts %}
 <script src="{% static 'react/cards.js'%}" type="text/babel"></script>

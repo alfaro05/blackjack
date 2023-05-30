@@ -28,18 +28,36 @@ def next_round(request):
     if(bot_takes_card):
         this_round_game.player_takes_new_card(0)
     this_round_game.check_round()
-    print("Bot", this_round_game.players[0].hand)
-    print("Player", this_round_game.players[1].hand)
     game_over = this_round_game.game_over
+    another_round = continue_flag and bot_takes_card
+    game_over = game_over or another_round
     first_player_hand = this_round_game.players[0].hand
     second_player_hand = this_round_game.players[1].hand
+    message_string = ""
+    print("Is the game over?",game_over)
     if(not(game_over)):
         request.session["game_object"]=this_round_game.session_object()
         bot_will_continue = this_round_game.players[0].will_continue
         request.session["bot_continues"]= bot_will_continue
+    else:
+        if(not(this_round_game.players[0].still_alive) and not(this_round_game.players[1].still_alive)):
+            message_string = "You both lost!"
+        if(this_round_game.players[0].still_alive and this_round_game.players[1].still_alive):
+            if(this_round_game.players[0].result == this_round_game.players[1].result):
+                message_string = "It's a tie!"
+        else:
+            if(this_round_game.players[0].result > this_round_game.players[1].result):
+                message_string = "Your opponent won!"
+            else:
+                message_string = "You won!"
+        if(this_round_game.players[0].still_alive and not(this_round_game.players[1].still_alive)):
+            message_string = "Your opponent won!"
+        if(this_round_game.players[1].still_alive and not(this_round_game.players[0].still_alive)): 
+            message_string = "Your won!"
+
 
     return render(request, "next_round.html",{"game_over":game_over,
-        "fph":first_player_hand, "sph":second_player_hand})
+        "fph":first_player_hand, "sph":second_player_hand, "message":message_string})
 
 #para el funcionamiento. en next round, para la instancia de jugadores, se toma de POST 
 #la eleccion del jugador de seguir en el juego. Para el CPU se toma la bandera continue de la 

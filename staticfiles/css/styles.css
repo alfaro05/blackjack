@@ -1,0 +1,113 @@
+:root{
+    --bg-color:rgb(27, 27, 27);
+    --strong-color:#812843;
+    --light-color:#e6bf33;   
+}
+body{
+    background-color: var(--bg-color);
+    color: white;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+h1{
+    font-family: 'Bungee Inline', cursive;
+    color: var(--strong-color);
+    text-shadow: 1px 0px 1px white, -1px 0px 1px white,
+        0px 1px 1px white, 0px -1px 1px white;
+    margin: 0px;
+    padding: 0px;
+}
+a{
+    text-decoration: none;
+}
+h2, h3{
+    color: var(--light-color);
+
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+}
+.header h1{
+    align-self: center;
+}
+.header img{
+    align-self: center;
+    margin-left: auto;
+}
+.hand-area{
+    display: flex;
+    flex-direction: row;
+}
+.card{
+    width: 70px;
+    height: 120px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 5px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.card p{
+    padding: 0px;
+    margin: 0px;
+    font-size: larger;
+    font-weight: bold;
+}
+.red-card{
+    color: red;
+}
+.black-card{
+    color:black;
+}
+.button{
+    text-decoration: none;
+    background-color: var(--light-color);
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    padding:5px;
+}
+.button:hover{
+    background-color: var(--strong-color);
+    color: white;
+}
+.hide{
+    background-image:url(card_pattern.png);
+}
+.hide p{
+    visibility: hidden;
+}
+.hidden{
+    visibility: hidden;
+}
+hr{
+    width: 95%;
+    margin-top: 4vh;
+    margin-bottom: 2vh;
+}
+.footer p{
+    margin:0px;
+    padding: 0px;
+    color: var(--light-color);
+    text-align: center;
+}
+.footer a{
+    color: var(--strong-color);
+    text-shadow: 1px 0px 1px var(--light-color),
+    -1px 0px 1px var(--light-color),
+    0px 1px 1px var(--light-color),
+    0px -1px 1px var(--light-color),;
+}
+.footer a:hover{
+    color: var(--light-color);
+    text-shadow: 1px 0px 1px var(--strong-color),
+    -1px 0px 1px var(--strong-color),
+    0px 1px 1px var(--strong-color),
+    0px -1px 1px var(--strong-color),;
+}
